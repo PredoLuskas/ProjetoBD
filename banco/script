@@ -1,0 +1,35 @@
+-- Criação da tabela "Produto"
+CREATE TABLE Produto (
+    id serial PRIMARY KEY,
+    categoria VARCHAR(255),
+    preco NUMERIC(10, 2),
+    descricao TEXT,
+    quantidade INTEGER
+);
+
+-- Criação da tabela "ArtFigure"
+CREATE TABLE ArtFigure (
+    id serial PRIMARY KEY,
+    anime VARCHAR(255),
+    personagem VARCHAR(255),
+    tamanho VARCHAR(50),
+    produto_id INTEGER REFERENCES Produto(id)
+);
+
+-- Criação da tabela "Roupa"
+CREATE TABLE Roupa (
+    tipoVestimenta VARCHAR(255),
+    tamanho VARCHAR(50),
+    cor VARCHAR(255),
+    produto_id INTEGER REFERENCES Produto(id)
+);
+
+-- Criação da tabela "Livro"
+CREATE TABLE Livro (
+    id serial PRIMARY KEY,
+    nome VARCHAR(255),
+    quantPag INTEGER,
+    author VARCHAR(255),
+    idioma VARCHAR(50),
+    produto_id INTEGER REFERENCES Produto(id)
+);
