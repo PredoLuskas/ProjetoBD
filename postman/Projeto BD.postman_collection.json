@@ -1,0 +1,2246 @@
+{
+	"info": {
+		"_postman_id": "cee9b4bc-2f00-4b91-b258-8d148d2b1c10",
+		"name": "Projeto BD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20002437"
+	},
+	"item": [
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Inserir Produto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"disponibilidade\": false,\r\n  \"preco\": \"19.99\",\r\n  \"descricao\": \"Filmes\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inserir Produto",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"disponibilidade\": false,\r\n  \"preco\": \"9999.99\",\r\n  \"descricao\": \"Manga\",\r\n  \"quantidade\": \"7\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/produtos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Sep 2023 03:05:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"disponibilidade\": false,\n    \"preco\": 9999.99,\n    \"descricao\": \"Manga\",\n    \"quantidade\": 7\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar todos Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar todos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/produtos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Sep 2023 03:07:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"disponibilidade\": true,\n        \"preco\": 299.99,\n        \"descricao\": \"Smartphone Android\",\n        \"quantidade\": 10\n    },\n    {\n        \"id\": 2,\n        \"disponibilidade\": false,\n        \"preco\": 9999.99,\n        \"descricao\": \"Manga\",\n        \"quantidade\": 7\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar Produto por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produtos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar por Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/produtos/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"produtos",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Sep 2023 03:07:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"disponibilidade\": true,\n    \"preco\": 299.99,\n    \"descricao\": \"Smartphone Android\",\n    \"quantidade\": 10\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar produto por Disponibilidade = true",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produtos/disponivel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"disponivel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar por Disponibilidade = true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/produtos/disponivel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"produtos",
+										"disponivel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Sep 2023 03:36:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"disponibilidade\": true,\n        \"preco\": 299.99,\n        \"descricao\": \"Smartphone Android\",\n        \"quantidade\": 10\n    },\n    {\n        \"id\": 3,\n        \"disponibilidade\": true,\n        \"preco\": 15,\n        \"descricao\": \"Manga\",\n        \"quantidade\": 5\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Atualizar produto por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 1,\r\n        \"disponibilidade\": false,\r\n        \"preco\": 299.98,\r\n        \"descricao\": \"Smartphone Android\",\r\n        \"quantidade\": 0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produtos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Atualizar produto por ID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"id\": 1,\r\n        \"disponibilidade\": false,\r\n        \"preco\": 299.98,\r\n        \"descricao\": \"Smartphone Android\",\r\n        \"quantidade\": 0\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/produtos/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"produtos",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Sep 2023 03:38:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"disponibilidade\": false,\n    \"preco\": 299.98,\n    \"descricao\": \"Smartphone Android\",\n    \"quantidade\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete produto por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 1,\r\n        \"disponibilidade\": false,\r\n        \"preco\": 299.98,\r\n        \"descricao\": \"Smartphone Android\",\r\n        \"quantidade\": 0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produtos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete produto por ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"id\": 1,\r\n        \"disponibilidade\": false,\r\n        \"preco\": 299.98,\r\n        \"descricao\": \"Smartphone Android\",\r\n        \"quantidade\": 0\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/produtos/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"produtos",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Sep 2023 03:39:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Roupas",
+			"item": [
+				{
+					"name": "Buscar todas as roupas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/roupas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roupas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inserir Roupa vinculando a ID Produto",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"tipovestimenta\": \"Short\",\r\n  \"tamanho\": \"G\",\r\n  \"cor\": \"Vermelho\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/roupas/inserir-com-produto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas",
+										"inserir-com-produto"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Oct 2023 18:22:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Roupa adicionada com sucesso"
+						},
+						{
+							"name": "Buscar Todas as roupas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/roupas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 03:44:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"produtoId\": 6,\n        \"tipovestimenta\": \"Cordao\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Preto\",\n        \"quantidade\": 15\n    },\n    {\n        \"produtoId\": 2,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"M\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 3,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"M\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 4,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 1,\n        \"tipovestimenta\": \"Chapeu\",\n        \"tamanho\": \"P\",\n        \"cor\": \"preto\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 5,\n        \"tipovestimenta\": \"Short\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Vermelho\",\n        \"quantidade\": 5\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar Roupa por ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/roupas/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roupas",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar Roupa por ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/roupas/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 03:52:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"produtoId\": 3,\n    \"tipovestimenta\": \"Camiseta\",\n    \"tamanho\": \"M\",\n    \"cor\": \"Azul\",\n    \"quantidade\": 5\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletar Roupa por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/roupas/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roupas",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Deletar Roupa por ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/roupas/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas",
+										"3"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 03:53:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Buscar roupa por Tipo de vestimenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/roupas/buscarPorTipoVestimenta?tipoVestimenta=Camiseta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roupas",
+								"buscarPorTipoVestimenta"
+							],
+							"query": [
+								{
+									"key": "tipoVestimenta",
+									"value": "Camiseta"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar roupa por Tipo de vestimenta",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/roupas/buscarPorTipoVestimenta?tipoVestimenta=Camiseta",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas",
+										"buscarPorTipoVestimenta"
+									],
+									"query": [
+										{
+											"key": "tipoVestimenta",
+											"value": "Camiseta"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 03:59:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"produtoId\": 2,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"M\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 4,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar roupa por tamanho",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/roupas/buscarPorTamanho?tamanho=G",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roupas",
+								"buscarPorTamanho"
+							],
+							"query": [
+								{
+									"key": "tamanho",
+									"value": "G"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar roupa por tamanho",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/roupas/buscarPorTamanho?tamanho=G",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas",
+										"buscarPorTamanho"
+									],
+									"query": [
+										{
+											"key": "tamanho",
+											"value": "G"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 04:00:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"produtoId\": 6,\n        \"tipovestimenta\": \"Cordao\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Preto\",\n        \"quantidade\": 15\n    },\n    {\n        \"produtoId\": 4,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 5,\n        \"tipovestimenta\": \"Short\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Vermelho\",\n        \"quantidade\": 5\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar roupa por Cor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/roupas/buscarPorCor?cor=Azul",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roupas",
+								"buscarPorCor"
+							],
+							"query": [
+								{
+									"key": "cor",
+									"value": "Azul"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar roupa por Cor",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/roupas/buscarPorCor?cor=Azul",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas",
+										"buscarPorCor"
+									],
+									"query": [
+										{
+											"key": "cor",
+											"value": "Azul"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 04:01:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"produtoId\": 2,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"M\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 4,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Inserir roupa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"produtoId\":2,\r\n  \"tipovestimenta\": \"Chinelo\",\r\n  \"tamanho\": \"42\",\r\n  \"cor\": \"Preto\",\r\n  \"quantidade\":1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/roupas/inserir-com-produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roupas",
+								"inserir-com-produto"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inserir Roupa vinculando a ID Produto",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"tipovestimenta\": \"Short\",\r\n  \"tamanho\": \"G\",\r\n  \"cor\": \"Vermelho\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/roupas/inserir-com-produto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas",
+										"inserir-com-produto"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Oct 2023 18:22:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Roupa adicionada com sucesso"
+						},
+						{
+							"name": "Buscar Todas as roupas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/roupas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 03:44:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"produtoId\": 6,\n        \"tipovestimenta\": \"Cordao\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Preto\",\n        \"quantidade\": 15\n    },\n    {\n        \"produtoId\": 2,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"M\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 3,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"M\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 4,\n        \"tipovestimenta\": \"Camiseta\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Azul\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 1,\n        \"tipovestimenta\": \"Chapeu\",\n        \"tamanho\": \"P\",\n        \"cor\": \"preto\",\n        \"quantidade\": 5\n    },\n    {\n        \"produtoId\": 5,\n        \"tipovestimenta\": \"Short\",\n        \"tamanho\": \"G\",\n        \"cor\": \"Vermelho\",\n        \"quantidade\": 5\n    }\n]"
+						},
+						{
+							"name": "Inserir roupa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"produtoId\":2,\r\n  \"tipovestimenta\": \"Chinelo\",\r\n  \"tamanho\": \"42\",\r\n  \"cor\": \"Preto\",\r\n  \"quantidade\":1\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/roupas/inserir-com-produto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas",
+										"inserir-com-produto"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 04:05:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Roupa adicionada com sucesso"
+						}
+					]
+				},
+				{
+					"name": "Atualizar tipo de vestimenta",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "novoTipoVestimenta",
+									"value": "calça",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/roupas/2/atualizarTipoVestimenta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roupas",
+								"2",
+								"atualizarTipoVestimenta"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Atualizar tipo de vestimenta",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "novoTipoVestimenta",
+											"value": "calça",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/roupas/2/atualizarTipoVestimenta",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roupas",
+										"2",
+										"atualizarTipoVestimenta"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 04:12:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Livro",
+			"item": [
+				{
+					"name": "Buscar todas os livros",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar todas os livros",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/livros",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livros"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 04:27:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"quantidade\": 10,\n        \"nome\": \"Pedro\",\n        \"quantPag\": 5,\n        \"author\": \"Lucas\",\n        \"idioma\": \"Ingles\"\n    },\n    {\n        \"id\": 2,\n        \"quantidade\": 10,\n        \"nome\": \"Pedro\",\n        \"quantPag\": 5,\n        \"author\": \"Lucas\",\n        \"idioma\": \"Ingles\"\n    },\n    {\n        \"id\": 3,\n        \"quantidade\": 10,\n        \"nome\": \"Pedro teste\",\n        \"quantPag\": 15,\n        \"author\": \"Lucas teste\",\n        \"idioma\": \"Portugues\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar por Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/livros/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar por Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/livros/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livros",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 04:28:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"quantidade\": 10,\n    \"nome\": \"Pedro\",\n    \"quantPag\": 5,\n    \"author\": \"Lucas\",\n    \"idioma\": \"Ingles\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Inserir Livro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 3,\r\n  \"nome\": \"One Piece Dressrosa\",\r\n  \"quantPag\": 100,\r\n  \"author\": \"Eichiro Oda\",\r\n  \"idioma\": \"Japones\",\r\n  \"quantidade\": 2\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/livros/inserir-com-produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros",
+								"inserir-com-produto"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inserir Livro",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 3,\r\n  \"nome\": \"One Piece Dressrosa\",\r\n  \"quantPag\": 100,\r\n  \"author\": \"Eichiro Oda\",\r\n  \"idioma\": \"Japones\",\r\n  \"quantidade\": 2\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/livros/inserir-com-produto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livros",
+										"inserir-com-produto"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 04:33:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Livro adicionada com sucesso"
+						}
+					]
+				},
+				{
+					"name": "Buscar por Author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/livros/buscarPorAutor?autor=Eichiro Oda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros",
+								"buscarPorAutor"
+							],
+							"query": [
+								{
+									"key": "autor",
+									"value": "Eichiro Oda"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar por Author",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/livros/buscarPorAutor?autor=Eichiro Oda",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livros",
+										"buscarPorAutor"
+									],
+									"query": [
+										{
+											"key": "autor",
+											"value": "Eichiro Oda"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 04:35:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"quantidade\": 5,\n        \"nome\": \"One Piece\",\n        \"quantPag\": 100,\n        \"author\": \"Eichiro Oda\",\n        \"idioma\": \"Japones\"\n    },\n    {\n        \"id\": 5,\n        \"quantidade\": 2,\n        \"nome\": \"One Piece Dressrosa\",\n        \"quantPag\": 100,\n        \"author\": \"Eichiro Oda\",\n        \"idioma\": \"Japones\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Atualizar Autor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "novoAutor",
+									"value": "Masashi kishimoto",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/livros/2/atualizarAutor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros",
+								"2",
+								"atualizarAutor"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Atualizar Autor",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "novoAutor",
+											"value": "Masashi kishimoto",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/livros/2/atualizarAutor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livros",
+										"2",
+										"atualizarAutor"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 04:37:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Delete livro por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "novoAutor",
+									"value": "Masashi kishimoto",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/livros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete livro por ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "novoAutor",
+											"value": "Masashi kishimoto",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/livros/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livros",
+										"1"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 04:39:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ArtFigure",
+			"item": [
+				{
+					"name": "Inserir art Figure",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 4,\r\n  \"anime\": \"One Piece\",\r\n  \"personagem\": \"Zoro\",\r\n  \"tamanho\": \"20 cm\",\r\n  \"quantidade\": 10\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/art-figures/inserir-com-produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"art-figures",
+								"inserir-com-produto"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inserir art Figure",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 4,\r\n  \"anime\": \"One Piece\",\r\n  \"personagem\": \"Zoro\",\r\n  \"tamanho\": \"20 cm\",\r\n  \"quantidade\": 10\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/art-figures/inserir-com-produto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"art-figures",
+										"inserir-com-produto"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 05:11:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "ArtFigure adicionada com sucesso"
+						}
+					]
+				},
+				{
+					"name": "Buscar todos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/art-figures",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"art-figures"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar todos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/art-figures",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"art-figures"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 05:16:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"anime\": \"One Piece\",\n        \"personagem\": \"Zoro\",\n        \"tamanho\": \"20 cm\",\n        \"quantidade\": 10\n    },\n    {\n        \"id\": 2,\n        \"anime\": \"One Piece\",\n        \"personagem\": \"Luffy\",\n        \"tamanho\": \"20 cm\",\n        \"quantidade\": 10\n    },\n    {\n        \"id\": 3,\n        \"anime\": \"Jujutsu Kaisen\",\n        \"personagem\": \"Satoro Gojo\",\n        \"tamanho\": \"20 cm\",\n        \"quantidade\": 10\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar por ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/art-figures/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"art-figures",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar por ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/art-figures/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"art-figures",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 05:17:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"anime\": \"Jujutsu Kaisen\",\n    \"personagem\": \"Satoro Gojo\",\n    \"tamanho\": \"20 cm\",\n    \"quantidade\": 10,\n    \"produto\": {\n        \"id\": 4,\n        \"disponibilidade\": false,\n        \"preco\": 500,\n        \"descricao\": \"ArtFigures\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar por Anime",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/art-figures/buscarPorAnime?anime=Jujutsu Kaisen",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"art-figures",
+								"buscarPorAnime"
+							],
+							"query": [
+								{
+									"key": "anime",
+									"value": "Jujutsu Kaisen"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar por Anime",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/art-figures/buscarPorAnime?anime=Jujutsu Kaisen",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"art-figures",
+										"buscarPorAnime"
+									],
+									"query": [
+										{
+											"key": "anime",
+											"value": "Jujutsu Kaisen"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 05:19:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 3,\n        \"anime\": \"Jujutsu Kaisen\",\n        \"personagem\": \"Satoro Gojo\",\n        \"tamanho\": \"20 cm\",\n        \"quantidade\": 10\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete Art-figure por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "novoAutor",
+									"value": "Masashi kishimoto",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/art-figures/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"art-figures",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Art-figure por ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "novoAutor",
+											"value": "Masashi kishimoto",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/art-figures/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"art-figures",
+										"2"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 05:21:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Atualizar personagem",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/art-figures/1/atualizarPersonagem?novoPersonagem=Boa Hancock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"art-figures",
+								"1",
+								"atualizarPersonagem"
+							],
+							"query": [
+								{
+									"key": "novoPersonagem",
+									"value": "Boa Hancock"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Atualizar personagem",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/art-figures/1/atualizarPersonagem?novoPersonagem=Boa Hancock",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"art-figures",
+										"1",
+										"atualizarPersonagem"
+									],
+									"query": [
+										{
+											"key": "novoPersonagem",
+											"value": "Boa Hancock"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 05:23:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}

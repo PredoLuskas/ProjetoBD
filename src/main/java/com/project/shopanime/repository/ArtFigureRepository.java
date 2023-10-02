@@ -21,7 +21,7 @@ public interface ArtFigureRepository extends JpaRepository<ArtFigure, Long> {
     // Inserir uma nova figura de arte
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO artfigure (anime,personagem,tamanho,quantidade,produtoId) VALUES (:anime, :personagem, :tamanho,:quantidade , :produtoId)", nativeQuery = true)
+    @Query(value = "INSERT INTO artfigure (anime,personagem,tamanho,quantidade,produto_id) VALUES (:anime, :personagem, :tamanho,:quantidade , :produtoId)", nativeQuery = true)
     int inserirArtFigure(@Param("anime") String anime, @Param("personagem") String personagem, @Param("tamanho") String tamanho, @Param("quantidade") Integer quantidade, @Param("produtoId") Long produtoId);
     ;
 
