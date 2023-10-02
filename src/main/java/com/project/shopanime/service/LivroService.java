@@ -1,9 +1,7 @@
 package com.project.shopanime.service;
 
 import com.project.shopanime.dto.LivroDTO;
-import com.project.shopanime.dto.RoupaDTO;
 import com.project.shopanime.model.Livro;
-import com.project.shopanime.model.Roupa;
 import com.project.shopanime.repository.LivroRepository;
 import com.project.shopanime.repository.ProdutoRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -38,9 +36,10 @@ public class LivroService {
         produtoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado com o ID: " + id));
 
-        livroRepository.inserirLivro(nome, quantPag,author,idioma, quantidade,id);
+        livroRepository.inserirLivro(nome, quantPag, author, idioma, quantidade, id);
         return true;
     }
+
     public void excluirLivroPorId(Long id) {
         livroRepository.excluirLivroPorId(id);
     }

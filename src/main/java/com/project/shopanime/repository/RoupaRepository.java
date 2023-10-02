@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface RoupaRepository extends JpaRepository<Roupa, Long> {
 
@@ -16,7 +15,6 @@ public interface RoupaRepository extends JpaRepository<Roupa, Long> {
     @Transactional
     @Query(value = "INSERT INTO roupa (tipovestimenta, tamanho, cor,quantidade, produto_id) VALUES (:tipo, :tamanho, :cor,:quantidade,:produtoId)", nativeQuery = true)
     int inserirRoupa(@Param("tipo") String tipo, @Param("tamanho") String tamanho, @Param("cor") String cor, @Param("quantidade") Integer quantidade, @Param("produtoId") Long produtoId);
-;
 
     // Excluir uma roupa pelo ID
     @Transactional

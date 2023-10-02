@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class ProdutoService {
 
@@ -21,9 +22,11 @@ public class ProdutoService {
     public List<Produto> listarProdutos() {
         return produtoRepository.buscarTodosProdutos();
     }
-    public List<Produto> buscarProdutosDisponiveis(){
+
+    public List<Produto> buscarProdutosDisponiveis() {
         return produtoRepository.buscarProdutosDisponiveis();
-    };
+    }
+
     public Optional<Produto> buscarProdutoPorId(Long id) {
         return produtoRepository.findById(id);
     }

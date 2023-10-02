@@ -45,9 +45,9 @@ public class LivroController {
                 livroDTO.getIdioma(),
                 livroDTO.getQuantidade()
         );
-        if(livro.equals(true))
+        if (livro.equals(true))
             return new ResponseEntity<>("Livro adicionada com sucesso", HttpStatus.CREATED);
-        else{
+        else {
             return new ResponseEntity<>("Livro não adicionada", HttpStatus.BAD_REQUEST);
         }
     }

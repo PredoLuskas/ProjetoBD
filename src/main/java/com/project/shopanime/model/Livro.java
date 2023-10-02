@@ -16,14 +16,12 @@ public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
-
+    Integer quantidade;
     @ManyToOne
     private Produto produto;
     private String nome;
-
     @Column(name = "quantpag")
     private int quantPag;
     private String author;
     private String idioma;
-    Integer quantidade;
 }

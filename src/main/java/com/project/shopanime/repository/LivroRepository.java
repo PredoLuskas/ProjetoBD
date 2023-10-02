@@ -25,6 +25,7 @@ public interface LivroRepository extends JpaRepository<Livro, Long> {
     @Transactional
     @Query(value = "INSERT INTO livro (nome, quantPag, author,idioma,quantidade, produto_id) VALUES (:nome,:quantPag, :author,:idioma,:quantidade,:produtoId)", nativeQuery = true)
     int inserirLivro(@Param("nome") String nome, @Param("quantPag") int quantPag, @Param("author") String author, @Param("idioma") String idioma, @Param("quantidade") Integer quantidade, @Param("produtoId") Long produtoId);
+
     // Excluir um livro pelo ID
     @Transactional
     @Modifying

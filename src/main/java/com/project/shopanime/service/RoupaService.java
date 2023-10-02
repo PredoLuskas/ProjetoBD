@@ -19,6 +19,7 @@ public class RoupaService {
     private final RoupaRepository roupaRepository;
 
     private final ProdutoRepository produtoRepository;
+
     @Autowired
     public RoupaService(RoupaRepository roupaRepository, ProdutoRepository produtoRepository) {
         this.roupaRepository = roupaRepository;
@@ -33,9 +34,9 @@ public class RoupaService {
         return roupaRepository.findById(id);
     }
 
-/*    public Roupa salvarRoupa(Roupa roupa) {
-        return roupaRepository.save(roupa);
-    }*/
+    /*    public Roupa salvarRoupa(Roupa roupa) {
+            return roupaRepository.save(roupa);
+        }*/
     public Roupa inserirRoupaComProduto(Long produtoId, String tipovestimenta, String tamanho, String cor, Integer quantidade) {
         // Passo 1: Crie uma instância de Roupa com os detalhes necessários
         Roupa novaRoupa = new Roupa();
@@ -52,7 +53,7 @@ public class RoupaService {
         novaRoupa.setProduto(produto);
 
         // Passo 4: Salve a Roupa no banco de dados
-        roupaRepository.inserirRoupa(tipovestimenta,tamanho,cor,quantidade,produtoId);
+        roupaRepository.inserirRoupa(tipovestimenta, tamanho, cor, quantidade, produtoId);
         return novaRoupa;
     }
 
@@ -83,6 +84,7 @@ public class RoupaService {
     public void atualizarCorRoupa(Long id, String novaCor) {
         roupaRepository.atualizarCorPorId(id, novaCor);
     }
+
     public List<RoupaDTO> converterParaDTO(List<Roupa> roupas) {
         return roupas.stream()
                 .map(this::converterParaDTO)

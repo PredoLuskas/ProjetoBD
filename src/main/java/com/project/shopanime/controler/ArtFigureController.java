@@ -1,9 +1,7 @@
 package com.project.shopanime.controler;
 
 import com.project.shopanime.dto.ArtFigureDTO;
-import com.project.shopanime.dto.RoupaDTO;
 import com.project.shopanime.model.ArtFigure;
-import com.project.shopanime.model.Roupa;
 import com.project.shopanime.service.ArtFigureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -52,9 +50,9 @@ public class ArtFigureController {
                 artFigureDTO.getTamanho(),
                 artFigureDTO.getQuantidade()
         );
-        if(artFigure.equals(true))
-        return new ResponseEntity<>("ArtFigure adicionada com sucesso", HttpStatus.CREATED);
-        else{
+        if (artFigure.equals(true))
+            return new ResponseEntity<>("ArtFigure adicionada com sucesso", HttpStatus.CREATED);
+        else {
             return new ResponseEntity<>("ArtFigure não adicionada", HttpStatus.BAD_REQUEST);
         }
     }

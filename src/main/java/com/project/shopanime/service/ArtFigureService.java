@@ -1,10 +1,8 @@
 package com.project.shopanime.service;
 
 import com.project.shopanime.dto.ArtFigureDTO;
-import com.project.shopanime.dto.RoupaDTO;
 import com.project.shopanime.model.ArtFigure;
 import com.project.shopanime.model.Produto;
-import com.project.shopanime.model.Roupa;
 import com.project.shopanime.repository.ArtFigureRepository;
 import com.project.shopanime.repository.ProdutoRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -21,6 +19,7 @@ public class ArtFigureService {
     private final ArtFigureRepository artFigureRepository;
 
     private final ProdutoRepository produtoRepository;
+
     @Autowired
     public ArtFigureService(ArtFigureRepository artFigureRepository, ProdutoRepository produtoRepository) {
         this.artFigureRepository = artFigureRepository;
@@ -38,13 +37,15 @@ public class ArtFigureService {
     public ArtFigure salvarArtFigure(ArtFigure artFigure) {
         return artFigureRepository.save(artFigure);
     }
+
     public boolean inserirArtFigure(long id, String anime, String personagem, String tamanho, Integer quantidade) {
         Produto produto = produtoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado com o ID: " + id));
 
-        artFigureRepository.inserirArtFigure(anime, personagem,tamanho,quantidade,id);
+        artFigureRepository.inserirArtFigure(anime, personagem, tamanho, quantidade, id);
         return true;
     }
+
     public void excluirArtFigurePorId(Long id) {
         artFigureRepository.excluirArtFigurePorId(id);
     }

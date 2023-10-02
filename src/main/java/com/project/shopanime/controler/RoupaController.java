@@ -38,7 +38,7 @@ public class RoupaController {
 
     @PostMapping("/inserir-com-produto")
     public ResponseEntity<String> inserirRoupaComProduto(@RequestBody RoupaDTO roupaDTO) {
-       roupaService.inserirRoupaComProduto(
+        roupaService.inserirRoupaComProduto(
                 roupaDTO.getProdutoId(),
                 roupaDTO.getTipovestimenta(),
                 roupaDTO.getTamanho(),
