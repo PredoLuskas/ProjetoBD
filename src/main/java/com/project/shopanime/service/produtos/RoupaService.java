@@ -1,10 +1,11 @@
-package com.project.shopanime.service;
+package com.project.shopanime.service.produtos;
 
 import com.project.shopanime.dto.RoupaDTO;
-import com.project.shopanime.model.Produto;
-import com.project.shopanime.model.Roupa;
-import com.project.shopanime.repository.ProdutoRepository;
-import com.project.shopanime.repository.RoupaRepository;
+import com.project.shopanime.model.produtos.Livro;
+import com.project.shopanime.model.produtos.Produto;
+import com.project.shopanime.model.produtos.Roupa;
+import com.project.shopanime.repository.produtos.ProdutoRepository;
+import com.project.shopanime.repository.produtos.RoupaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,32 +28,28 @@ public class RoupaService {
     }
 
     public List<Roupa> buscarTodasRoupas() {
-        return roupaRepository.findAll();
+        return roupaRepository.buscarTodos();
     }
 
+    public List<Roupa> buscarRoupasComEstoqueMenorQueCinco() {
+        return roupaRepository.busqueRoupasComMenosDeCincoQuant();
+    }
     public Optional<Roupa> buscarRoupaPorId(Long id) {
-        return roupaRepository.findById(id);
+        return Optional.ofNullable(roupaRepository.buscarPorId(id));
     }
 
-    /*    public Roupa salvarRoupa(Roupa roupa) {
-            return roupaRepository.save(roupa);
-        }*/
     public Roupa inserirRoupaComProduto(Long produtoId, String tipovestimenta, String tamanho, String cor, Integer quantidade) {
-        // Passo 1: Crie uma instância de Roupa com os detalhes necessários
         Roupa novaRoupa = new Roupa();
         novaRoupa.setTipoVestimenta(tipovestimenta);
         novaRoupa.setTamanho(tamanho);
         novaRoupa.setCor(cor);
         novaRoupa.setQuantidade(quantidade);
 
-        // Passo 2: Carregue o Produto do banco de dados com base no ID
         Produto produto = produtoRepository.findById(produtoId)
                 .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado com o ID: " + produtoId));
 
-        // Passo 3: Associe o Produto à Roupa
         novaRoupa.setProduto(produto);
 
-        // Passo 4: Salve a Roupa no banco de dados
         roupaRepository.inserirRoupa(tipovestimenta, tamanho, cor, quantidade, produtoId);
         return novaRoupa;
     }
@@ -62,15 +59,15 @@ public class RoupaService {
     }
 
     public List<Roupa> buscarRoupasPorTipoVestimenta(String tipoVestimenta) {
-        return roupaRepository.findByTipoVestimenta(tipoVestimenta);
+        return roupaRepository.buscarPorVestimenta(tipoVestimenta);
     }
 
     public List<Roupa> buscarRoupasPorTamanho(String tamanho) {
-        return roupaRepository.findByTamanho(tamanho);
+        return roupaRepository.buscarPorTamanho(tamanho);
     }
 
     public List<Roupa> buscarRoupasPorCor(String cor) {
-        return roupaRepository.findByCor(cor);
+        return roupaRepository.buscarPorCor(cor);
     }
 
     public void atualizarTipoVestimentaRoupa(Long id, String novoTipoVestimenta) {

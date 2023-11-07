@@ -1,7 +1,7 @@
-package com.project.shopanime.controler;
+package com.project.shopanime.controler.produtos;
 
-import com.project.shopanime.model.Produto;
-import com.project.shopanime.service.ProdutoService;
+import com.project.shopanime.model.produtos.Produto;
+import com.project.shopanime.service.produtos.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,11 +33,6 @@ public class ProdutoController {
     @GetMapping("/disponivel")
     List<Produto> buscarProdutosDisponiveis() {
         return produtoService.buscarProdutosDisponiveis();
-    }
-
-    @PostMapping
-    public Produto criarProduto(@RequestBody Produto produto) {
-        return produtoService.criarProduto(produto);
     }
 
     @PutMapping("/{id}")

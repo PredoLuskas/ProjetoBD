@@ -1,4 +1,4 @@
-package com.project.shopanime.model;
+package com.project.shopanime.model.produtos;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,7 +26,7 @@ public class Roupa {
     Integer quantidade;
 
     @JoinColumn(name = "produto_id")
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = true)
+    @ManyToOne()
     Produto produto;
 
 }

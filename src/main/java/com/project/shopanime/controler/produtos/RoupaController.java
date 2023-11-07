@@ -1,8 +1,9 @@
-package com.project.shopanime.controler;
+package com.project.shopanime.controler.produtos;
 
 import com.project.shopanime.dto.RoupaDTO;
-import com.project.shopanime.model.Roupa;
-import com.project.shopanime.service.RoupaService;
+import com.project.shopanime.model.produtos.Livro;
+import com.project.shopanime.model.produtos.Roupa;
+import com.project.shopanime.service.produtos.RoupaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,13 @@ public class RoupaController {
         return roupa.map(value -> new ResponseEntity<>(roupaService.converterParaDTO(value), HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
+    @GetMapping("/estoque-cinco")
+    public ResponseEntity<List<Roupa>> buscarLivrosComEstoqueMenorQueCinco() {
+        List<Roupa> roupas = roupaService.buscarRoupasComEstoqueMenorQueCinco();
+        return new ResponseEntity<>(roupas, HttpStatus.OK);
+    }
+
 
     @PostMapping("/inserir-com-produto")
     public ResponseEntity<String> inserirRoupaComProduto(@RequestBody RoupaDTO roupaDTO) {

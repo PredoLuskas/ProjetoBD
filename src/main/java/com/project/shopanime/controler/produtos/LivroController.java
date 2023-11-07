@@ -1,15 +1,14 @@
-package com.project.shopanime.controler;
+package com.project.shopanime.controler.produtos;
 
 import com.project.shopanime.dto.LivroDTO;
-import com.project.shopanime.model.Livro;
-import com.project.shopanime.service.LivroService;
+import com.project.shopanime.model.produtos.Livro;
+import com.project.shopanime.service.produtos.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/livros")
@@ -28,11 +27,17 @@ public class LivroController {
         return new ResponseEntity<>(livroService.converterParaDTO(livros), HttpStatus.OK);
     }
 
+    @GetMapping("/estoque-cinco")
+    public ResponseEntity<List<Livro>> buscarLivrosComEstoqueMenorQueCinco() {
+        List<Livro> livros = livroService.buscarLivrosComEstoqueMenorQueCinco();
+        return ResponseEntity.ok(livros);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<LivroDTO> buscarLivroPorId(@PathVariable Long id) {
-        Optional<Livro> livro = livroService.buscarLivroPorId(id);
-        return livro.map(value -> new ResponseEntity<>(livroService.converterParaDTO(value), HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        List<Livro> livro = livroService.buscarLivroPorId(id);
+        return livro.stream().map(value -> new ResponseEntity<>(livroService.converterParaDTO(value), HttpStatus.OK))
+                .findAny().orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping("/inserir-com-produto")

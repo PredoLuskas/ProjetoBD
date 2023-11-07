@@ -1,10 +1,11 @@
-package com.project.shopanime.service;
+package com.project.shopanime.service.produtos;
 
 import com.project.shopanime.dto.ArtFigureDTO;
-import com.project.shopanime.model.ArtFigure;
-import com.project.shopanime.model.Produto;
-import com.project.shopanime.repository.ArtFigureRepository;
-import com.project.shopanime.repository.ProdutoRepository;
+import com.project.shopanime.model.produtos.ArtFigure;
+import com.project.shopanime.model.produtos.Produto;
+import com.project.shopanime.model.produtos.Roupa;
+import com.project.shopanime.repository.produtos.ArtFigureRepository;
+import com.project.shopanime.repository.produtos.ProdutoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,11 +28,13 @@ public class ArtFigureService {
     }
 
     public List<ArtFigure> buscarTodasArtFigures() {
-        return artFigureRepository.findAll();
+        return artFigureRepository.buscarTodos();
     }
-
+    public List<ArtFigure> buscarRoupasComEstoqueMenorQueCinco() {
+        return artFigureRepository.busqueArtFigureComMenosDeCincoQuant();
+    }
     public Optional<ArtFigure> buscarArtFigurePorId(Long id) {
-        return artFigureRepository.findById(id);
+        return artFigureRepository.buscarPorId(id);
     }
 
     public ArtFigure salvarArtFigure(ArtFigure artFigure) {

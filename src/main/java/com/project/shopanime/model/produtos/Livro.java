@@ -1,4 +1,4 @@
-package com.project.shopanime.model;
+package com.project.shopanime.model.produtos;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

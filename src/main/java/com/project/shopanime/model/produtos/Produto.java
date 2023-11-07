@@ -1,4 +1,4 @@
-package com.project.shopanime.model;
+package com.project.shopanime.model.produtos;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,9 +25,5 @@ public class Produto {
     Boolean disponibilidade;
     BigDecimal preco;
     String descricao;
-//    Integer quantidade;
-
-/*    @OneToMany(mappedBy = "produto")
-    List<Roupa> roupa;*/
 
 }

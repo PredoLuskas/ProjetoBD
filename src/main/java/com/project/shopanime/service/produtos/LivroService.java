@@ -1,15 +1,14 @@
-package com.project.shopanime.service;
+package com.project.shopanime.service.produtos;
 
 import com.project.shopanime.dto.LivroDTO;
-import com.project.shopanime.model.Livro;
-import com.project.shopanime.repository.LivroRepository;
-import com.project.shopanime.repository.ProdutoRepository;
+import com.project.shopanime.model.produtos.Livro;
+import com.project.shopanime.repository.produtos.LivroRepository;
+import com.project.shopanime.repository.produtos.ProdutoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,12 +23,15 @@ public class LivroService {
         this.produtoRepository = produtoRepository;
     }
 
+    public List<Livro> buscarLivrosComEstoqueMenorQueCinco() {
+        return livroRepository.busqueLivrosComMenosDeCincoQuant();
+    }
     public List<Livro> buscarTodosLivros() {
-        return livroRepository.findAll();
+        return livroRepository.buscarTodos();
     }
 
-    public Optional<Livro> buscarLivroPorId(Long id) {
-        return livroRepository.findById(id);
+    public List<Livro> buscarLivroPorId(Long id) {
+        return livroRepository.buscarPorId(id);
     }
 
     public boolean inserirLivro(long id, String nome, int quantPag, String author, String idioma, Integer quantidade) {
@@ -45,15 +47,15 @@ public class LivroService {
     }
 
     public List<Livro> buscarLivrosPorNome(String nome) {
-        return livroRepository.findByNome(nome);
+        return livroRepository.buscarPorNome(nome);
     }
 
     public List<Livro> buscarLivrosPorAutor(String autor) {
-        return livroRepository.findByAuthor(autor);
+        return livroRepository.buscarPorAuthor(autor);
     }
 
     public List<Livro> buscarLivrosPorIdioma(String idioma) {
-        return livroRepository.findByIdioma(idioma);
+        return livroRepository.buscarPorIdioma(idioma);
     }
 
     public void atualizarNomeLivro(Long id, String novoNome) {

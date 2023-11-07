@@ -1,8 +1,8 @@
-package com.project.shopanime.service;
+package com.project.shopanime.service.produtos;
 
 
-import com.project.shopanime.model.Produto;
-import com.project.shopanime.repository.ProdutoRepository;
+import com.project.shopanime.model.produtos.Produto;
+import com.project.shopanime.repository.produtos.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,11 +28,7 @@ public class ProdutoService {
     }
 
     public Optional<Produto> buscarProdutoPorId(Long id) {
-        return produtoRepository.findById(id);
-    }
-
-    public Produto criarProduto(Produto produto) {
-        return produtoRepository.save(produto);
+        return produtoRepository.buscarProdutoPorId(id);
     }
 
     public Produto atualizarProduto(Long id, Produto produtoAtualizado) {

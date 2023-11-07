@@ -1,6 +1,7 @@
-package com.project.shopanime.repository;
+package com.project.shopanime.repository.produtos;
 
-import com.project.shopanime.model.Produto;
+import com.project.shopanime.model.produtos.Produto;
+import com.project.shopanime.model.vendas.Cliente;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -33,4 +34,5 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
     @Modifying
     @Query(value = "INSERT INTO produto (descricao, disponibilidade, preco, quantidade) " + "VALUES (:descricao, :disponibilidade, :preco, :quantidade)", nativeQuery = true)
     <S extends Produto> S salvarProduto(@Param("descricao") String descricao, @Param("disponibilidade") Boolean disponibilidade, @Param("preco") BigDecimal preco, @Param("quantidade") String quantidade);
+
 }

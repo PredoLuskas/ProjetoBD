@@ -1,8 +1,9 @@
-package com.project.shopanime.controler;
+package com.project.shopanime.controler.produtos;
 
 import com.project.shopanime.dto.ArtFigureDTO;
-import com.project.shopanime.model.ArtFigure;
-import com.project.shopanime.service.ArtFigureService;
+import com.project.shopanime.model.produtos.ArtFigure;
+import com.project.shopanime.model.produtos.Roupa;
+import com.project.shopanime.service.produtos.ArtFigureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,11 @@ public class ArtFigureController {
     public ResponseEntity<List<ArtFigureDTO>> buscarTodasArtFigures() {
         List<ArtFigure> artFigures = artFigureService.buscarTodasArtFigures();
         return new ResponseEntity<>(artFigureService.converterParaDTO(artFigures), HttpStatus.OK);
+    }
+    @GetMapping("/estoque-cinco")
+    public ResponseEntity<List<ArtFigure>> buscarLivrosComEstoqueMenorQueCinco() {
+        List<ArtFigure> artFigures = artFigureService.buscarRoupasComEstoqueMenorQueCinco();
+        return ResponseEntity.ok(artFigures);
     }
 
     @GetMapping("/{id}")
